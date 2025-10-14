@@ -8,7 +8,7 @@ const char *mp3File = "/bre2.mp3";  // Archivo en raíz de SD
 const int relayPin = 32;  // GPIO para el relé (bomba)
 const int ledPin = 33;    // GPIO para el LED (enciende cuando el relé se enciende)
 const int touchPin = 27;  // GPIO para el TTP223 (opcional, para futuros modos)
-const unsigned long relayInterval = 180000;  // 20 segundos
+const unsigned long relayInterval = 90000;  // 20 segundos
 const unsigned long relayOnDuration = 5000;  // 4 segundos
 const unsigned long mp3DurationMs = 7800;   // 5 segundos (duración estimada de bre2.mp3)
 
@@ -53,7 +53,7 @@ void setup() {
   out.begin(cfg);
 
   // Configura reproductor
-  player.setVolume(0.5);  // Volumen moderado para evitar distorsión
+  player.setVolume(0.1);  // Volumen moderado para evitar distorsión
   Serial.println("Sistema listo. Esperando ciclos...");
   previousMillis = millis();
 }
